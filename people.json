@@ -1,0 +1,52 @@
+{
+    "Cardale Jones": {
+        "twitter_handle": "@CJ1two",
+        "affiliation": "XFL",
+        "hashtags": ["#CardaleJones"]
+    },
+    "Lebron James": {
+        "twitter_handle": "@KingJames",
+        "affiliation": "NBA",
+        "hashtags": ["#LeBronJames", "KingJames"]
+    },
+    "Zion Williamson": {
+        "twitter_handle": "@Zionwilliamson",
+        "affiliation": "NBA",
+        "hashtags": ["#ZionWilliamson"]
+    },
+    "Giannis Antetokounmpko": {
+        "twitter_handle": "@Giannis_An34",
+        "affiliation": "NBA",
+        "hashtags": ["#GiannisAntetokounmpko", "#TheGreekFreak"]
+    },
+    "Myles Powell": {
+        "twitter_handle": "@Myles_MBP_23",
+        "affiliation": "NCAA",
+        "hashtags": ["#MylesPowell"]
+    },
+    "John Mooney": {
+        "twitter_handle": "@jmoon32",
+        "affiliation": "NCAA",
+        "hashtags": ["#JohnMooney"]
+    },
+    "Mike Trout": {
+        "twitter_handle": "@MikeTrout",
+        "affiliation": "MLB",
+        "hashtags": ["#MikeTrout"]
+    },
+    "Mookie Betts": {
+        "twitter_handle": "@mookiebetts",
+        "affiliation": "MLB",
+        "hashtags": ["#MookieBetts"]
+    },
+    "Steven Stamkos": {
+        "twitter_handle": "@RealStamkos91",
+        "affiliation": "NHL",
+        "hashtags": []
+    },
+    "Nathan MacKinnon": {
+        "twitter_handle": "@Mackinnon9",
+        "affiliation": "NHL",
+        "hashtags": []
+    }
+}
