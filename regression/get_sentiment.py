@@ -5,8 +5,8 @@ from scipy.sparse import hstack
 from sys import stdin
 
 training_objects_dir = 'training_objects/'
-model_file = 'small_subset_model.obj'
-vectorizer_file = 'small_subset_vectorizer.obj'
+model_file = 'full_subset_model.obj'
+vectorizer_file = 'full_subset_vectorizer.obj'
 DEBUG = False
 
 if DEBUG:
