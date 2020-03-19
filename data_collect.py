@@ -38,6 +38,9 @@ for key in athlete_dictionary:
 
             if "https" in tweet:
                 continue
+            
+            # replace newline to make sure that we only have one tweet per line
+            tweet.replace('\n', ' ')
 
             # Open new file and write
-            file.write(tweet.encode('utf-8')+"\n\n")
+            file.write(tweet.encode('utf-8')+"\n")
