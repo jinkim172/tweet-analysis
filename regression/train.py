@@ -6,12 +6,14 @@ from scipy.sparse import hstack
 from sklearn.linear_model import Ridge
 
 # file names
+input_files_dir = 'input_files/'
+training_objects_dir = 'training_objects/'
 training_file = 'small_subset_train.csv'
 model_file = 'small_subset_model.obj'
 vectorizer_file = 'small_subset_vectorizer.obj'
 
-print(f"Reading training data from {training_file}...")
-data = pandas.read_csv(training_file, header=None, encoding='latin-1')
+print(f"Reading training data from {input_files_dir + training_file}...")
+data = pandas.read_csv(input_files_dir + training_file, header=None, encoding='latin-1')
 
 vectorizer = TfidfVectorizer(min_df=5)
 x_train = vectorizer.fit_transform(data.iloc[:, 5].values)
@@ -24,8 +26,8 @@ print("Training linear regression model...")
 clf.fit(x, y)
 
 # save model and vectorizer
-print(f"Saving model to {model_file} and vectorizer to {vectorizer_file}...")
-with open(model_file, 'wb') as f:
+print(f"Saving model to {training_objects_dir + model_file} and vectorizer to {training_objects_dir + vectorizer_file}...")
+with open(training_objects_dir + model_file, 'wb') as f:
     pickle.dump(clf, f)
-with open(vectorizer_file, 'wb') as f:
+with open(training_objects_dir + vectorizer_file, 'wb') as f:
     pickle.dump(vectorizer, f)
