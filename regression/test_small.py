@@ -1,9 +1,6 @@
 import pandas
 import pickle
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.feature_extraction import DictVectorizer
 from scipy.sparse import hstack
-from sklearn.linear_model import Ridge
 from sklearn.metrics import explained_variance_score as evs
 
 input_files_dir = 'input_files/'
