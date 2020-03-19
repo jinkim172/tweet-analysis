@@ -5,7 +5,7 @@ from sklearn.feature_extraction import DictVectorizer
 from scipy.sparse import hstack
 from sklearn.linear_model import Ridge
 
-data = pandas.read_csv('small_subset_train.csv', header=None)
+data = pandas.read_csv('small_subset_train.csv', header=None, encoding='latin-1')
 
 vectorizer = TfidfVectorizer(min_df=5)
 
