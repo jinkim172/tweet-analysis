@@ -8,9 +8,9 @@ from sklearn.metrics import explained_variance_score as evs
 
 input_files_dir = 'input_files/'
 training_objects_dir = 'training_objects/'
-testing_file = 'subset_test.csv'
-model_file = 'full_subset_model.obj'
-vectorizer_file = 'full_subset_vectorizer.obj'
+testing_file = 'small_subset_test.csv'
+model_file = 'small_subset_model.obj'
+vectorizer_file = 'small_subset_vectorizer.obj'
 
 print(f"Reading testing data from {input_files_dir + testing_file}...")
 data = pandas.read_csv(input_files_dir + testing_file, header=None, encoding='latin-1')

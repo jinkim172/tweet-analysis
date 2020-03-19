@@ -8,9 +8,9 @@ from sklearn.linear_model import Ridge
 # file names
 input_files_dir = 'input_files/'
 training_objects_dir = 'training_objects/'
-training_file = 'subset_train.csv'
-model_file = 'full_subset_model.obj'
-vectorizer_file = 'full_subset_vectorizer.obj'
+training_file = 'small_subset_train.csv'
+model_file = 'small_subset_model.obj'
+vectorizer_file = 'small_subset_vectorizer.obj'
 
 print(f"Reading training data from {input_files_dir + training_file}...")
 data = pandas.read_csv(input_files_dir + training_file, header=None, encoding='latin-1')
