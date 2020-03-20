@@ -40,7 +40,7 @@ for key in athlete_dictionary:
                 continue
             
             # replace newline to make sure that we only have one tweet per line
-            tweet.replace('\n', ' ')
+            tweet = tweet.replace('\n', ' ')
 
             # Open new file and write
             file.write((tweet + "\n").encode('utf-8'))
