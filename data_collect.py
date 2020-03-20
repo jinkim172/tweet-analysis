@@ -4,6 +4,7 @@ import os
 import json
 import tweepy
 import datetime
+from nltk.corpus import stopwords
 
 auth = tweepy.OAuthHandler('lW1lQkWiSV86ROytPEabdBplB', 'cWUzxdgL2zJokUPRP1Msos00u1HhgI7bp33aLvJ4IkrhbsFjp6') #(consumer_key, consumer_secret)
 auth.set_access_token('1184759057078521856-TYMiapY06vE5cfuhKOOlkeOmWKRMH8', 'BkD0wZcJJYRSg0thaDc7DqW2Cl8NdWtILyGnuJlglWyHy') #(access_token, access_token_secret)
@@ -12,6 +13,25 @@ api = tweepy.API(auth)
 # Global variables
 TODAY_DATE = 19 # Update this with every new day of month of March
 NUM_TWEETS = 100
+
+# Text Cleaning Function
+def cleanTweet(self, string):
+    # Given a String, Returns a Bag of Words (All Lowercase)
+    # Removes:
+    # - URLs
+    # - NLTK Stop Words
+    # - Twitter Specific Text: @ and RT
+    words = string.lower().strip().split()
+    for word in words:
+        word = word.rstrip().lstrip()
+        
+        if re.match(r'^https?:\/\/.*[\r\n]*', word) \
+        or re.match('\s', word) \
+        or word in stopwords.words('english') \
+        or word == 'rt' or word == '':
+            words.remove(word)
+
+    return words # Currently Returns a List of Words
 
 # Read through list of athletes
 with open("athletes.json", "r") as f:
