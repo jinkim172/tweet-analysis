@@ -24,7 +24,7 @@ for key in athlete_dictionary:
         start_str = "2020-03-" + str(TODAY_DATE-(i+1))
         until_str = "2020-03-" + str(TODAY_DATE-i)
         file_name += "_" + start_str + ".txt"
-        file = open(file_name, "w+")
+        file = open(file_name, "wb")
 
         # Search tweets within each day
         tweets = api.search(q=athlete_dictionary[key], count=NUM_TWEETS, since=start_str, until=until_str, tweet_mode="extended")
@@ -40,7 +40,7 @@ for key in athlete_dictionary:
                 continue
             
             # replace newline to make sure that we only have one tweet per line
-            tweet.replace('\n', ' ')
+            tweet = tweet.replace('\n', ' ')
 
             # Open new file and write
-            file.write(tweet.encode('utf-8')+"\n")
+            file.write((tweet + "\n").encode('utf-8'))
