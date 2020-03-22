@@ -4,6 +4,7 @@ import os
 import json
 import tweepy
 import datetime
+import re
 from nltk.corpus import stopwords
 
 auth = tweepy.OAuthHandler('lW1lQkWiSV86ROytPEabdBplB', 'cWUzxdgL2zJokUPRP1Msos00u1HhgI7bp33aLvJ4IkrhbsFjp6') #(consumer_key, consumer_secret)
@@ -15,7 +16,7 @@ TODAY_DATE = 19 # Update this with every new day of month of March
 NUM_TWEETS = 100
 
 # Text Cleaning Function
-def cleanTweet(self, string):
+def cleanTweet(string):
     # Given a String, Returns a Bag of Words (All Lowercase)
     # Removes:
     # - URLs
@@ -31,7 +32,7 @@ def cleanTweet(self, string):
         or word == 'rt' or word == '':
             words.remove(word)
 
-    return words # Currently Returns a List of Words
+    return ' '.join(words) # Currently Returns a List of Words
 
 # Read through list of athletes
 with open("athletes.json", "r") as f:
@@ -61,6 +62,7 @@ for key in athlete_dictionary:
             
             # replace newline to make sure that we only have one tweet per line
             tweet = tweet.replace('\n', ' ')
+            tweet = cleanTweet(tweet)
 
             # Open new file and write
             file.write((tweet + "\n").encode('utf-8'))
