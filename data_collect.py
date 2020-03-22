@@ -5,7 +5,6 @@ import json
 import tweepy
 import datetime
 import re
-from nltk.corpus import stopwords
 
 auth = tweepy.OAuthHandler('lW1lQkWiSV86ROytPEabdBplB', 'cWUzxdgL2zJokUPRP1Msos00u1HhgI7bp33aLvJ4IkrhbsFjp6') #(consumer_key, consumer_secret)
 auth.set_access_token('1184759057078521856-TYMiapY06vE5cfuhKOOlkeOmWKRMH8', 'BkD0wZcJJYRSg0thaDc7DqW2Cl8NdWtILyGnuJlglWyHy') #(access_token, access_token_secret)
@@ -28,7 +27,6 @@ def cleanTweet(string):
         
         if re.match(r'^https?:\/\/.*[\r\n]*', word) \
         or re.match('\s', word) \
-        or word in stopwords.words('english') \
         or word == 'rt' or word == '':
             words.remove(word)
 
@@ -41,11 +39,11 @@ with open("athletes.json", "r") as f:
 # For every athlete...
 for key in athlete_dictionary:
     for i in range(7): # Search API only allows for 7 day intervals into past, not 20 as was originally believed
-        file_name = key
+        file_name = 'data/' + key
         start_str = "2020-03-" + str(TODAY_DATE-(i+1))
         until_str = "2020-03-" + str(TODAY_DATE-i)
         file_name += "_" + start_str + ".txt"
-        file = open(file_name, "wb")
+        file = open(file_name, "wb+")
 
         # Search tweets within each day
         tweets = api.search(q=athlete_dictionary[key], count=NUM_TWEETS, since=start_str, until=until_str, tweet_mode="extended")
