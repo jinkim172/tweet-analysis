@@ -1,3 +1,4 @@
 .vscode/
 projectenv/
 *.txt
+vader/sentiment/vader_lexicon.zip
