@@ -32,6 +32,10 @@ def cleanTweet(string):
 
     return ' '.join(words) # Currently Returns a List of Words
 
+# Make Sure Folder Exists
+if not os.path.exists('data'):
+    os.makedirs('data')
+
 # Read through list of athletes
 with open("athletes.json", "r") as f:
     athlete_dictionary = json.loads(f.read())
