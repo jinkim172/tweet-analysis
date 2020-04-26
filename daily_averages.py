@@ -2,13 +2,15 @@
 import subprocess
 import os
 import json
+from tqdm import tqdm
 
 # Prints Sentiment Score Per Player Each Day
 def average_daily_per_player():
     # Initialize Variables
     average_scores = {}
 
-    for entry in os.scandir('./data/'): 
+    entries = list(os.scandir('./old_data/'))
+    for entry in tqdm(entries, total=len(entries)): 
 
         # Parse Entry Filename
         player, date = entry.path[7:-4].split('_')

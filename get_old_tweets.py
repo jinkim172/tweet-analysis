@@ -8,9 +8,8 @@ import datetime as dt
 import re
 
 # Global variables
-TODAY_DATE = 19 # Update this with every new day of month of March
-START_DATE = dt.datetime(2020, 2, 1) # 2020-02-01 
-END_DATE = dt.datetime(2020, 2, 5) # 2020-02-05 
+START_DATE = dt.datetime(2019, 10, 25) # 2020-02-12 
+END_DATE = dt.datetime(2019, 11, 7) # 2020-02-24 
 MAX_TWEETS_PER_DAY = 100 
 
 # Text Cleaning Function

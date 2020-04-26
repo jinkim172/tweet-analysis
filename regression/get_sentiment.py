@@ -25,4 +25,6 @@ for line in stdin:
 
     # predict on test data
     [prediction] = clf.predict(x)
-    print(prediction)
+
+    # Multiply by 25 to get a number between 0 and 100ish
+    print(prediction * 25)

@@ -9,7 +9,9 @@ def sentiment_scores(sentence):
     # convert score to the same scale as the original regression model
     score *= 2
     score += 2
-    # now, score will be between 0 and +4, just like the original one
+    # Get score between 0 and 100
+    score *= 25
+    # now, score will be between 0 and +100, just like the original one
     return score
 
 if __name__ == "__main__":
